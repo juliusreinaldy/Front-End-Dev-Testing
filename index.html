@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    
+    <title>Front End Developer Testing</title>
+
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number]{
+            -moz-appearance: textfield;
+        }
+
+        #background{
+            position: absolute;
+            object-fit: none;
+            width: 960px;
+            height: 530px;
+            object-position: 0px -20px;
+        }
+
+        #border{
+            position: absolute;
+            
+            width: 150px;
+            height: 100px;
+            background: rgba(88, 79, 79, 0.7);
+            border: 2px solid gray;
+            
+            top: 360px;
+            left: 810px;
+        }
+
+        #number{
+            position: absolute;
+                   
+            height: 30px;
+            width: 30px;
+
+            top: 370px;
+            left: 870px;
+
+            border: none;
+            background: rgba(88, 79, 79, 0.1);
+            text-align: center;
+            color: yellow;
+        }
+        #rotator{
+            position: absolute;
+            z-index: 1;
+            object-fit: none;
+            width: 98px;
+            height: 100px;
+            object-position: 0px -552px;
+            top: 222px;
+            left: 833px;
+
+            opacity: 1;
+
+            
+        }
+
+        #rotatorHover{
+            position: absolute;
+            object-fit: none;
+            width: 98px;
+            height: 100px;
+            object-position: -98px -552px;
+
+            top: 222px;
+            left: 833px;
+          
+        }
+
+        #wild{
+           
+            object-fit: none;
+            width: 250px;
+            height: 160px;
+            object-position: -198px -552px;
+            transform: scale(0.8);
+            
+
+            
+        }
+
+        #strawberry{
+          
+            object-fit: none;
+            width: 230px;
+            height: 160px;
+            object-position: -440px -552px;
+            transform: scale(1);
+            
+
+           
+        }
+ 
+        #pineapple{
+          
+            object-fit: none;
+            width: 230px;
+            height: 160px;
+            object-position: -670px -552px;
+            transform: scale(1);
+            
+
+           
+        }
+
+        #lemon{
+          
+            object-fit: none;
+            width: 230px;
+            height: 140px;
+            object-position: 0px -720px;
+            transform: scale(1);
+            
+
+            
+        }
+
+        #watermelon{
+            
+            object-fit: none;
+            width: 230px;
+            height: 140px;
+            object-position: -470px -720px;
+            transform: scale(1);
+            
+
+           
+        }
+
+        #grape{
+           
+            object-fit: none;
+            width: 230px;
+            height: 140px;
+            object-position: -240px -720px;
+            transform: scale(1);
+            
+
+           
+        }
+
+        .slot{
+            visibility: hidden;
+           
+        }
+        
+       
+    </style>
+        
+</head>
+<body>
+
+    <img id="background" src="front End.png" alt="background" width="1" height="1">
+    <input type="image" onclick="rotateFunction()" id="rotator" src="front End.png" alt="background" width="1" height="1">
+    <img id="rotatorHover" src="front End.png" alt="background" width="1" height="1">
+
+    <div id="border">
+        <p style="color: yellow;">Money: $</p>
+        <p style="color: yellow;">Bet: $ 5</p>
+    </div>
+    
+    <input type="number" id="number" value="55">
+   
+    <div id= "slots">
+        
+      
+        
+        <ul class= "slot" id="slot-1">
+            <li class = 'pawn'> <img id="wild" src="front End.png" alt="background" width="1" height="1"> </li>
+            <li class = 'pawn'> <img id="strawberry" src="front End.png" alt="background" width="1" height="1"> </li>
+            <li class = 'pawn'> <img id="pineapple" src="front End.png" alt="background" width="1" height="1"> </li>
+            <li class = 'pawn'> <img id="lemon" src="front End.png" alt="background" width="1" height="1"> </li>
+            <li class = 'pawn'> <img id="watermelon" src="front End.png" alt="background" width="1" height="1"> </li>
+            <li class = 'pawn'> <img id="grape" src="front End.png" alt="background" width="1" height="1"> </li>
+        </ul>
+        <ul class= "slot" id="slot-2">
+            <li class = 'pawn'> <img id="wild" src="front End.png" alt="background" width="1" height="1"> </li>
+            <li class = 'pawn'> <img id="strawberry" src="front End.png" alt="background" width="1" height="1"> </li>
+            <li class = 'pawn'> <img id="pineapple" src="front End.png" alt="background" width="1" height="1"> </li>
+            <li class = 'pawn'> <img id="lemon" src="front End.png" alt="background" width="1" height="1"> </li>
+            <li class = 'pawn'> <img id="watermelon" src="front End.png" alt="background" width="1" height="1"> </li>
+            <li class = 'pawn'> <img id="grape" src="front End.png" alt="background" width="1" height="1"> </li>
+        </ul>
+        <ul class= "slot" id="slot-3">
+            <li class = 'pawn'> <img id="wild" src="front End.png" alt="background" width="1" height="1"> </li>
+            <li class = 'pawn'> <img id="strawberry" src="front End.png" alt="background" width="1" height="1"> </li>
+            <li class = 'pawn'> <img id="pineapple" src="front End.png" alt="background" width="1" height="1"> </li>
+            <li class = 'pawn'> <img id="lemon" src="front End.png" alt="background" width="1" height="1"> </li>
+            <li class = 'pawn'> <img id="watermelon" src="front End.png" alt="background" width="1" height="1"> </li>
+            <li class = 'pawn'> <img id="grape" src="front End.png" alt="background" width="1" height="1"> </li>
+        </ul>
+    </div>
+
+    
+   <script>
+   
+    function rotateFunction(){
+        
+
+        document.getElementById("rotator").style.top ='-900px';
+        document.getElementById("number").stepDown(5);      
+             
+        var list = document.getElementsByClassName("slot");       
+
+        list[0].style.visibility ='visible';
+        list[1].style.visibility ='visible';
+        list[2].style.visibility ='visible';
+
+        var x = document.getElementById("slot-1");
+        var y = document.getElementById("slot-2");
+        var z = document.getElementById("slot-3");
+
+        x.style.webkitAnimationName ="rotate-1";
+        x.style.animationName ="rotate-1";
+
+        y.style.webkitAnimationName ="rotate-3";
+        y.style.animationName ="rotate-3";
+
+        z.style.webkitAnimationName ="rotate-2";
+        z.style.animationName ="rotate-2";
+       
+        document.getElementById("rotator").style.opacity = '0';
+
+        setTimeout(function(){
+            p = document.getElementById("rotator");
+            
+            p.style.opacity = '1';
+            p.style.top = '222px';
+            
+            x.style.webkitAnimationName="none";
+            x.style.animationName="none";
+
+            y.style.webkitAnimationName="none";
+            y.style.animationName="none";
+
+            z.style.webkitAnimationName="none";
+            z.style.animationName="none";
+            
+            list[0].style.visibility ='hidden';
+            list[1].style.visibility ='hidden';
+            list[2].style.visibility ='hidden';
+           
+        },7000);
+        
+       
+
+        
+        
+    }
+
+   </script>
+    
+
+
+
+   
+    
+</body>
+</html>
